@@ -2,11 +2,15 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { z } from 'zod';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { loadConfig } from './config.js';
 import { DifyClient } from './dify-client.js';
 import { UserInputControlType } from './types.js';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 // Load configuration
-const config = await loadConfig(process.env.CONFIG_PATH || 'config.yaml');
+const config = loadConfig(process.env.CONFIG_PATH || path.resolve(__dirname, '../config.yaml'));
 // Create server instance
 const server = new Server({
     name: 'dify-workflow-mcp',

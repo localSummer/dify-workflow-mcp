@@ -1,81 +1,72 @@
-# Dify MCP Server (TypeScript)
-[![smithery badge](https://smithery.ai/badge/@faiz-gear/dify-mcp-server-ts)](https://smithery.ai/server/@faiz-gear/dify-mcp-server-ts)
+# Dify Workflows MCP 服务器 (TypeScript)
 
-A TypeScript implementation of a Model Context Protocol (MCP) server that exposes Dify workflows as tools.
+一个 Model Context Protocol (MCP) 服务器的 TypeScript 实现，将 Dify 工作流作为工具暴露出来。
 
-## Features
+## 特性
 
-- Converts Dify applications into MCP tools
-- Supports streaming responses from Dify workflows
-- Configurable via YAML configuration file
-- Written in TypeScript for type safety
+- 将 Dify 应用程序转换为 MCP 工具
+- 支持从 Dify 工作流流式响应（待实现）
+- 通过 YAML 配置文件进行配置
+- 使用 TypeScript 编写，具有类型安全性
 
-## Prerequisites
+## 前提条件
 
-- Node.js 18 or higher
-- npm 8 or higher
-- Access to Dify API and application secret keys
+- Node.js 18 或更高版本
+- npm 8 或更高版本
+- 访问 Dify API 和应用程序密钥
 
-## Installation
+## 安装
 
-### Installing via Smithery
-
-To install Dify MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@faiz-gear/dify-mcp-server-ts):
-
-```bash
-npx -y @smithery/cli install @faiz-gear/dify-mcp-server-ts --client claude
-```
-
-1. Clone the repository:
+1. 克隆仓库：
 
    ```bash
-   git clone <repository-url>
-   cd dify-mcp-server-ts
+   git clone https://github.com/localSummer/dify-workflow-mcp
+   cd dify-workflow-mcp
    ```
 
-2. Install dependencies:
+2. 安装依赖：
 
    ```bash
    npm install
    ```
 
-3. Create a configuration file:
+3. 创建配置文件：
    ```yaml
    # config.yaml
    dify_base_url: 'https://api.dify.ai/v1'
    dify_app_sks:
-     - 'your-dify-app-sk-1' # Replace with your actual Dify app secret key
-     - 'your-dify-app-sk-2' # Replace with your actual Dify app secret key
+     - 'your-dify-app-sk-1' # 替换为你的实际 Dify 应用程序密钥
+     - 'your-dify-app-sk-2' # 替换为你的实际 Dify 应用程序密钥
    ```
 
-## Usage
+## 使用方法
 
-1. Build the project:
+1. 构建项目：
 
    ```bash
    npm run build
    ```
 
-2. Start the server:
+2. 启动服务器：
    ```bash
    npm start
    ```
 
-For development:
+开发环境：
 
 ```bash
 npm run dev
 ```
 
-## Configuration
+## 配置
 
-The server can be configured using a YAML file. By default, it looks for `config.yaml` in the project root. You can specify a different path using the `CONFIG_PATH` environment variable.
+服务器可以使用 YAML 文件进行配置。默认情况下，它会在项目根目录中查找 `config.yaml`。您可以使用 `CONFIG_PATH` 环境变量指定不同的路径。
 
-### Configuration Options
+### 配置选项
 
-- `dify_base_url`: The base URL for the Dify API
-- `dify_app_sks`: A list of Dify application secret keys
+- `dify_base_url`: Dify API 的基本 URL
+- `dify_app_sks`: Dify 应用程序密钥列表
 
-## License
+## 许可证
 
 ISC
