@@ -67,6 +67,22 @@ npm run dev
 - `dify_base_url`: Dify API 的基本 URL
 - `dify_app_sks`: Dify 应用程序密钥列表
 
+## Cline/Roo Code配置
+```json
+"dify-workflow-mcp": {
+   "command": "node",
+   "args": [
+      "path/dify-workflow-mcp/build/index.js"
+   ],
+   "env": {
+      "CONFIG_PATH": "path/dify-workflow-mcp/config.yaml"
+   },
+   "disabled": false,
+   "alwaysAllow": [],
+   "timeout": 300
+}
+```
+
 ## 许可证
 
 ISC
