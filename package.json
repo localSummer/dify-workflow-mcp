@@ -1,0 +1,35 @@
+{
+  "name": "dify-workflow-mcp",
+  "version": "1.0.0",
+  "description": "A TypeScript MCP server for Dify workflows",
+  "type": "module",
+  "bin": {
+    "dify-mcp": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "start": "node build/index.js",
+    "dev": "ts-node --esm src/index.ts",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "dify",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/inspector": "^0.2.7",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@types/axios": "^0.14.0",
+    "axios": "^1.6.7",
+    "yaml": "^2.3.4",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
