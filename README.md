@@ -83,6 +83,13 @@ npm run dev
 }
 ```
 
+## 注意事项
+- 当前运行工作流使用的响应模式是：response_mode: 'blocking'，会等待工作流执行完成后输出最终结果
+- 当前工作流输出字段为：`code` 和 `checkResult`，如输出字段不一致，需要调整下面的代码
+   ```ts
+   const { code, checkResult } = responseData.data.outputs;
+   ```
+
 ## 许可证
 
 ISC
