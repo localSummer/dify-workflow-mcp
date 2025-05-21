@@ -1,4 +1,5 @@
 # Dify Workflows MCP 服务器 (TypeScript)
+[![smithery badge](https://smithery.ai/badge/@localSummer/dify-workflow-mcp)](https://smithery.ai/server/@localSummer/dify-workflow-mcp)
 
 一个 Model Context Protocol (MCP) 服务器的 TypeScript 实现，将 Dify 工作流作为工具暴露出来。
 
@@ -17,6 +18,15 @@
 
 ## 安装
 
+### Installing via Smithery
+
+To install Dify Workflows for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@localSummer/dify-workflow-mcp):
+
+```bash
+npx -y @smithery/cli install @localSummer/dify-workflow-mcp --client claude
+```
+
+### Manual Installation
 1. 克隆仓库：
 
    ```bash
