@@ -1,0 +1,33 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config)=>({command:'sh',args:['-c',`cat >config.yaml <<EOF
+    dify_base_url: "${config.difyBaseUrl}"
+    dify_app_sks:
+    ${config.difyAppSks.map(sk => '  - "'+sk+'"').join('\n')}
+    EOF
+    node build/index.js`],env:{CONFIG_PATH:'config.yaml'}})
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - difyBaseUrl
+      - difyAppSks
+    properties:
+      difyBaseUrl:
+        type: string
+        description: Dify API base URL
+      difyAppSks:
+        type: array
+        items:
+          type: string
+        description: List of Dify application secret keys
+  exampleConfig:
+    difyBaseUrl: https://api.dify.ai/v1
+    difyAppSks:
+      - sk-app-123
+      - sk-app-456
